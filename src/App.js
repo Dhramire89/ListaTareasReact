@@ -5,6 +5,8 @@ import FormularioTareas from './Componentes/FormularioTareas'
 
 const App =() => {
 
+
+
   const [tareas, setTareas] = useState(
     [
       {
@@ -14,22 +16,24 @@ const App =() => {
       },
       {
         id: 2,
-        texto: 'Lavar el Carro', 
+        texto: 'Lavar la Moto', 
         completada: false
       },
       {
         id: 3,
-        texto: 'Lavar el Carro', 
+        texto: 'Practicar React', 
         completada: false
       }
     ]
   ); 
 
+ 
+  console.log(tareas);
 
   return (
     <div className="contenedor">
       <Header/>
-      <FormularioTareas/>
+      <FormularioTareas tareas={tareas} setTareas={setTareas} />
       
     </div>
   );
