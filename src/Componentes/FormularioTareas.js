@@ -19,7 +19,10 @@ const FormularioTareas = ({tareas, setTareas}) => {
                 texto: inputTarea, 
                 completada: false
             }
-        ]); 
+        ]
+       
+        ); 
+        setInputTarea('');
     }
 
     return (  
