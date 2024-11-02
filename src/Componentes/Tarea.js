@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faSquare, faEdit, faTimes } from '@fortawesome/free-solid-svg-icons'
 
-const Tarea = ({ tarea, toggleCompletada, editarTarea }) => {
+const Tarea = ({ tarea, toggleCompletada, editarTarea, borrarTarea }) => {
 
     const [editandoTarea, setEditandoTarea] = useState (false); 
     const [nuevaTarea, setNuevaTarea] = useState(tarea ? tarea.texto : 'llego con error la tarea'); 
@@ -57,6 +57,7 @@ const Tarea = ({ tarea, toggleCompletada, editarTarea }) => {
                 <FontAwesomeIcon  
                     icon={faTimes}
                     className="lista-tareas__icono lista-tareas__icono-accion"
+                    onClick={() => borrarTarea(tarea.id)}
                 />
             </div>
         </li>

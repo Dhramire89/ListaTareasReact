@@ -24,6 +24,15 @@ const ListaTareas = ({ tareas, setTareas }) => {
         }) );
     }; 
 
+    const borrarTarea = (id) =>{
+        setTareas(tareas.filter((tarea)  => {
+            if(tarea.id !==  id){
+                return tarea;
+            }
+            return; 
+        }) );
+    }
+
     return ( 
         <ul className="lista-tareas">
             {tareas.length > 0 ? tareas.map((tarea) => {
@@ -32,6 +41,7 @@ const ListaTareas = ({ tareas, setTareas }) => {
                             tarea={tarea} // Pasamos el objeto tarea completo
                             toggleCompletada = {toggleCompletada}
                             editarTarea = {editarTarea}
+                            borrarTarea = {borrarTarea}
                         />
                         
             }) : (
